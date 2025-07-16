@@ -37,8 +37,14 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>`
             : `<p><em>No participants yet</em></p>`;
 
+        // Show category if present
+        const categoryHTML = details.category
+          ? `<p><strong>Category:</strong> ${details.category}</p>`
+          : "";
+
         activityCard.innerHTML = `
           <h4>${name}</h4>
+          ${categoryHTML}
           <p>${details.description}</p>
           <p><strong>Schedule:</strong> ${details.schedule}</p>
           <p><strong>Availability:</strong> ${spotsLeft} spots left</p>
